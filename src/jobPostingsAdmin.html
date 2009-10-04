@@ -65,19 +65,53 @@
 				</tbody>
 				<!-- end section -->
 				<!-- Section for a job posting -->
-				<tbody class="" onmouseover="this.prevClassName = this.className; this.className = 'trOverLightBlue';" onmouseout="this.className = this.prevClassName;">
-    				<tr class="trBottomPadding20px">
-    					<td class="paddingLeft20px">Job:</td>
-    					<td class="paddingLeft20px">1800Contacts</td>
-    				</tr>
-    				<tr class="trBottomPadding20px">
-    					<td class="paddingLeft20px">URL:</td>
-    					<td class="paddingLeft20px"><a href="http://www.1800contacts.com/" title="1800Contacts">http://www.1800contacts.com/</a></td>
-    				</tr>
-    				<tr class="trBottomPadding20px">
-    					<td class="paddingLeft20px">Description:</td>
-    					<td class="paddingLeft20px">Have certain skills related to website design and the technical skills to write code in C#, HTML, Javacsript, etc...</td>
-    				</tr>
+				<tbody class="" onmouseover="this.prevClassName = this.className; this.className = 'trOverLightBlue';" onmouseout="this.className = this.prevClassName;" style="vertical-align: top;">
+					<form name="frmEditPosting3">
+        				<tr class="trBottomPadding20px">
+        					<td class="paddingLeft20px">Job:</td>
+        					<td class="paddingLeft20px"><input type="text" name="txtJob_id3" value="1800Contacts"/></td>
+        				</tr>
+        				<tr class="trBottomPadding20px">
+        					<td class="paddingLeft20px">URL:</td>
+        					<td class="paddingLeft20px"><input type="text" name="txtURL_id3" value="http://www.1800contacts.com/"/></td>
+        				</tr>
+        				<tr class="trBottomPadding20px">
+        					<td class="paddingLeft20px">Description:</td>
+        					<td class="paddingLeft20px"><textarea rows="10" cols="100">Have certain skills related to website design and the technical skills to write code in C#, HTML, Javacsript, etc...</textarea></td>
+        				</tr>
+						<tr>
+							<td colspan="2" style="text-align: right;"><input type="button" value="Cancel"/><span style="width: 10px;"></span><input type="submit" value="Update"/></td>
+						</tr>
+					</form>
+				</tbody>
+				<!-- end section -->
+			</table>
+		</div>
+		<div style="height: 20px;"></div>
+		<div class="normalText" style="text-align: center; border: 2px solid #8560a8; padding-top: 10px; padding-bottom: 10px;">
+    		<div style="text-align: center;">
+    			<span class="page_header">Add New Posting</span>
+            </div>
+			<table cellspacing="0" cellpadding="0">
+				<!-- Section for a job posting -->
+				<tbody class="" onmouseover="this.prevClassName = this.className; this.className = 'trOverLightBlue';" onmouseout="this.className = this.prevClassName;" style="vertical-align: top;">
+					<form name="frmAddPosting">
+        				<tr class="trBottomPadding20px">
+        					<td class="paddingLeft20px">Job:</td>
+        					<td class="paddingLeft20px"><input type="text" name="txtJob_id3" value=""/></td>
+        				</tr>
+        				<tr class="trBottomPadding20px">
+        					<td class="paddingLeft20px">URL:</td>
+        					<td class="paddingLeft20px"><input type="text" name="txtURL_id3" value=""/></td>
+        				</tr>
+        				<tr class="trBottomPadding20px">
+        					<td class="paddingLeft20px">Description:</td>
+        					<td class="paddingLeft20px"><textarea rows="10" cols="100">Have certain skills related to website design and the technical skills to write code in C#, HTML, Javacsript, etc...</textarea></td>
+        				</tr>
+						<tr>
+							<td colspan="2" style="text-align: right;"><span style="width: 10px;"></span><input type="submit" value="Add"/></td>
+						</tr>
+					</form>
 				</tbody>
 				<!-- end section -->
 			</table>

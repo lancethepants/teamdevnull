@@ -1,7 +1,8 @@
 body
 {
 	background: #999;
-	margin: 0px;
+	margin: auto;
+	text-align: center;
 }
 
 .content
@@ -29,7 +30,7 @@ body
 
 .header_content
 {
-	height: 274px;
+	height: 314px;
 	padding-top: 40px;
 	border-bottom: 1px solid #ccc;
 }
@@ -56,6 +57,7 @@ body
 .body_content
 {
 	padding: 25px;
+	text-align: left;
 }
 
 .login_box
@@ -77,4 +79,36 @@ body
 	margin-right: 8px;
 	-moz-border-radius: 3px;
 	-webkit-border-radius: 3px;
+}
+
+#trBottomBorder1px td {
+	border-bottom: 1px solid #6D4D7A;
+}
+
+.paddingLeft20px {
+	padding-left: 20px;
+}
+
+.page_header {
+	font-size: 26px;
+	font-weight: bold;
+	font-family: Helvetica, Arial, Sans-Serif;
+}
+
+.normalText {
+	font-size: 12px;
+	font-family: Helvetica, Arial, Sans-Serif;
+}
+
+.trBottomPadding20px {
+	padding-bottom: 10px;
+	padding-top: 10px;
+}
+
+.trEvenLightPurple {
+	background-color: #e4d5f3;
+}
+
+.trOverLightBlue {
+	background-color: #c9e2ec;
 }
