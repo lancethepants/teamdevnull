@@ -1,8 +1,15 @@
+html
+{
+	height: 100%;
+}
+
 body
 {
 	background: #999;
 	margin: auto;
 	text-align: center;
+	font-family Arial, Hevlvetica, Sans-Serif;
+	height: 100%;
 }
 
 .content
@@ -30,7 +37,7 @@ body
 
 .header_content
 {
-	height: 314px;
+	height: 276px;
 	padding-top: 40px;
 	border-bottom: 1px solid #ccc;
 }
@@ -92,12 +99,20 @@ body
 .page_header {
 	font-size: 26px;
 	font-weight: bold;
-	font-family: Helvetica, Arial, Sans-Serif;
 }
 
-.normalText {
+.normalText, .normalTextLeft {
 	font-size: 12px;
-	font-family: Helvetica, Arial, Sans-Serif;
+}
+
+.normalTextLeft 
+{
+	text-align: left;
+}
+
+.fontSize14px
+{
+	font-size: 14px;
 }
 
 .trBottomPadding20px {
