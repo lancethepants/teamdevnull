@@ -127,3 +127,13 @@ body
 .trOverLightBlue {
 	background-color: #c9e2ec;
 }
+
+.pPaddingLeft10px
+{
+	padding-left: 10px;
+}
+
+.pPaddingRight10px
+{
+	padding-right: 10px;
+}
