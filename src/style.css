@@ -143,3 +143,9 @@ body
 	width: 20px;
 	height: 19px;
 }
+
+input[type=text],textarea
+{
+	border: solid 1px #85b1de;
+    background-color: #EDF2F7;
+}
