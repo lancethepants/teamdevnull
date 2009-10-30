@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<?xml-stylesheet type="text/xsl" href="xmlWithCDataTransform.xsl"?>
+<Root>
+	<TableNodes>
+		<table style="border: solid 5px black;">
+			<tr>
+				<td>This is a test table</td>
+			</tr>
+		</table>
+	</TableNodes>
+    <TableCodeGeneration>
+            <![CDATA[
+				<table style="border: solid 5px black;">
+					<tr>
+						<td>This is a test table</td>
+					</tr>
+				</table>
+				]]>
+    </TableCodeGeneration>
+    <FormNodes>
+        <form name="PersonalInfoFrm">
+            <input type="text" name="txtFirstName" value="Put your first name here"/>
+            <input type="text" name="txtLastName" value="Put your last name here"/>
+        </form>
+    </FormNodes>
+    <FormCodeGeneration>
+        <![CDATA[
+			<form name="PersonalInfoFrm" style="border: dotted 2px green;">
+				<input type="text" name="txtFirstName" value="Put your first name here"/>
+				<input type="text" name="txtLastName" value="Put your last name here"/>
+			</form>
+			]]>
+    </FormCodeGeneration>
+</Root> 

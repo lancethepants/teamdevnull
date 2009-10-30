@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<?xml-stylesheet type="text/xsl" href="nutritionTransform.xsl"?>
+<NutritionFacts>
+	<ProductName>Gatorade - Cool Blue</ProductName>
+	<ServingInformation>
+		<ServingSize>8 fl oz (240 mL)</ServingSize>
+		<ServingsPerContainer>3</ServingsPerContainer>
+	</ServingInformation>
+	<Facts>
+		<Calories name="Calories">
+			<EightFlOz>50</EightFlOz>
+			<PerBottle>160</PerBottle>
+		</Calories>
+		<Item name="Total Fat">
+			<Amount>
+				<EightFlOz>0g</EightFlOz>
+				<PerBottle>0g</PerBottle>
+			</Amount>
+			<DailyValue>
+				<EightFlOz>0%</EightFlOz>
+				<PerBottle>0%</PerBottle>
+			</DailyValue>
+		</Item>
+		<Item name="Sodium">
+			<Amount>
+				<EightFlOz>110mg</EightFlOz>
+				<PerBottle>330mg</PerBottle>
+			</Amount>
+			<DailyValue>
+				<EightFlOz>5%</EightFlOz>
+				<PerBottle>14%</PerBottle>
+			</DailyValue>
+		</Item>
+		<Item name="Potassium">
+			<Amount>
+				<EightFlOz>30mg</EightFlOz>
+				<PerBottle>90mg</PerBottle>
+			</Amount>
+			<DailyValue>
+				<EightFlOz>1%</EightFlOz>
+				<PerBottle>3%</PerBottle>
+			</DailyValue>
+		</Item>
+		<Item name="Total Carb.">
+			<Amount>
+				<EightFlOz>14g</EightFlOz>
+				<PerBottle>42g</PerBottle>
+			</Amount>
+			<DailyValue>
+				<EightFlOz>5%</EightFlOz>
+				<PerBottle>14%</PerBottle>
+			</DailyValue>
+			<Sugars name="Sugars">
+				<Amount>
+					<EightFlOz>14g</EightFlOz>
+					<PerBottle>42g</PerBottle>
+				</Amount>
+			</Sugars>
+		</Item>
+		<Item name="Protein">
+			<Amount>
+				<EightFlOz>0g</EightFlOz>
+				<PerBottle>0g</PerBottle>
+			</Amount>
+		</Item>
+	</Facts>
+</NutritionFacts>
