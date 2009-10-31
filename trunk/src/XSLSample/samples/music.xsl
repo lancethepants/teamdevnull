@@ -5,7 +5,7 @@
     <TABLE border="1">
       <xsl:for-each select="CD[position() mod $columns = 1]"> 
          <TR>
-           <xsl:for-each select=".|following-sibling::CD[position() < $columns]">
+           <xsl:for-each select=".|following-sibling:CD[position() < $columns]">
              <TD>
                <xsl:value-of select="." />
              </TD>
