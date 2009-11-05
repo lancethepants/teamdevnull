@@ -1,6 +1,6 @@
 <?php
 require_once('../../simpletest/autorun.php');
-require_once('../classes/DAL.php');
+require_once('../DAL.php');
 
 /**
  * Unit test for the DAL
