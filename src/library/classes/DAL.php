@@ -1,5 +1,6 @@
 <?php 
 require_once("DALAbstract.php");
+require_once("../const/constants.php");
 /**
  * Data Access Layer class extends DALAbstract.php
  * This class is designed to access mysql db functions
