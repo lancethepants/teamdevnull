@@ -101,10 +101,13 @@ form
 
 <?php
 	
-	require_once("/home/devnull/teamdevnull-read-only/src/library/classes/DAL.php");
+	/*require_once("/home/devnull/teamdevnull-read-only/src/library/classes/DAL.php");*/
+	require_once("/library/classes/DAL.php");
+
 	$db = new DAL();
+	/*
 	$result = $db->execute("SELECT FROM");
-	
+	*/
 	/*$db->update("query");*/
 	
 	
