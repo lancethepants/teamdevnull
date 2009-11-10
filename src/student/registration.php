@@ -2,7 +2,7 @@
 <head>
 
 <style>
-
+/*
 body
 {
 	background: #999;
@@ -95,17 +95,20 @@ form
 	border: 1px solid #666699;
 	padding: 5px;
 }
+*/
 </style>
+
+<link href="../library/css/style.css" type="text/css" rel="stylesheet">
 </head>
 <body>
 
 <?php
 	
-	/*require_once("/home/devnull/teamdevnull-read-only/src/library/classes/DAL.php");*/
-	require_once("../library/classes/DAL.php");
+	/*require_once("/home/devnull/teamdevnull-read-only/src/library/classes/DAL.php"); FOR PROD*/
+	require_once("../includes.php");
 	$db = new DAL();
-	//	$result = $db->execute("SELECT FROM");
-	// $db->update("query");*/
+	//	$result = $db->execute("SELECT FROM"); FOR SELECTs
+	// $db->update("query"); FOR UPDATEs*/ 
 	
 	
 	
@@ -117,7 +120,7 @@ form
 
 	<div class="header">
 	
-		<img src="title.png" class="title_bar" />
+		<img src="../library/images/title.png" class="title_bar" />
 		
 		<div class="login_box">
 		
@@ -138,44 +141,6 @@ form
 		</div>
 		
 		<div class="body_content" align="center">
-        	
-        	<?php
-
-				if (isset($_POST['submitRegistration']))
-				{
-					$fname = $_POST['fname'];
-					$lname = $_POST['lname'];
-					$login = $_POST['username'];
-					$pass = $_POST['userpass'];
-					$cQuestion = $_POST['cQuestion'];
-					$cAnswer = $_POST['cAnswer'];
-					$city = $_POST['city'];
-					$phone = $_POST['hphone'];
-					$email = $_POST['emailAddress'];
-					$mobile = $_POST['mphone'];
-					if (isset($_POST['sms']))
-					{
-						$sms = 'y';
-					}
-					else
-					{
-						$sms = 'n';
-					}
-					$degree = $_POST['track'];
-					$mobileprovider = $_POST['provider'];
-					$campus = $_POST['campus'];
-					$referral = $_POST['firstHearAbout'];
-					/*
-					$conn = mysql_connect('localhost','root','')
-					
-					$userid = mysql_insert_id();
-					*/
-					
-				}
-
-
-			?>
-        
 			<form action="registrationConfirmed.php" method="post">
             <table border="0" cellspacing="0" cellpadding="3">
             <tr valign="top">
@@ -206,16 +171,11 @@ form
                         <input type="text" name="mphone" /><br />
                         Provider: <Select name="provider">
 		                <?php
-							//$conn = mysql_connect('localhost','root','');
-							//mysql_select_db('3750-09devnull',$conn);
-							
 							$sql = "SELECT * FROM mobileprovidercategory";
 							$result = $db->execute($sql);
-							//$result = mysql_query($sql,$conn);
-							while ($row = mysql_fetch_array($result))
+							foreach ($result as $key => $row)
 							{									
 								echo "<option value='".$row['MobileProviderCategoryID']."'>".$row['MobileProviderCategoryDesc']."<br />";
-
 							}
 						?>
                         </select>
@@ -252,33 +212,22 @@ form
                         <td style="font-style:italic;font-size:14px;">Degree Track:</td>
                         <td style="font-style:italic;font-size:14px;">
                         	<?php
-								//$conn = mysql_connect('localhost','root','');
-								//mysql_select_db('3750-09devnull',$conn);
 								$sql = "SELECT * FROM degreecategory";
 								$result = $db->execute($sql);
-								//$result = mysql_query($sql,$conn);
-								while ($row = mysql_fetch_array($result))
+								foreach ($result as $key => $row)
 								{									
 									echo "<input type='radio' name='track' value='".$row['DegreeCategoryID']."' checked='true'>".$row['DegreeCategoryDesc']."<br />";									
 								}	
 							?>
-                            <!--
-                            <input type="radio" name="track" value="se" checked="true" />Software Engineer<br />
-                            <input type="radio" name="track" value="net" />Network Administration<br />
-                            <input type="radio" name="track" value="custom" />Customized<br />
-                            -->
                         </td>
 	                </tr>
     	            <tr valign="top">
         	            <td style="font-style:italic;font-size:14px;">Your Main Campus:</td>
             	        <td style="font-style:italic;font-size:14px;">
 	                        <?php
-								//$conn = mysql_connect('localhost','root','');
-								//mysql_select_db('3750-09devnull',$conn);
 								$sql = "SELECT * FROM campuscategory";
 								$result = $db->execute($sql);
-								//$result = mysql_query($sql,$conn);
-								while ($row = mysql_fetch_array($result))
+								foreach ($result as $key => $row)
 								{									
 									echo "<input type='radio' name='campus' value='".$row['CampusCategoryID']."' checked='true'>".$row['CampusCategoryDesc']."<br />";									
 								}	
@@ -290,12 +239,9 @@ form
         	            <td style="font-style:italic;font-size:14px;">How did you FIRST hear about us:</td>
             	        <td style="font-style:italic;font-size:14px;">
 	                        <?php
-								//$conn = mysql_connect('localhost','root','');
-								//mysql_select_db('3750-09devnull',$conn);
 								$sql = "SELECT * FROM refferalcategory";
 								$result = $db->execute($sql);
-								//$result = mysql_query($sql,$conn);
-								while ($row = mysql_fetch_array($result))
+								foreach ($result as $key => $row)
 								{									
 									echo "<input type='radio' name='firstHearAbout' value='".$row['RefferalCategoryID']."' checked='true'>".$row['RefferalCategoryDesc']."<br />";									
 								}	
@@ -319,14 +265,11 @@ form
             	<th colspan="2"><input type="submit" value="Register" name="submitRegistration"></th>
             </tr>
             </table>
-            </form>
-            
-		</div>
-			
+            </form>            
+		</div>			
 	</div>
-
 </div>
-test
+
 </center>
 
 </body>
