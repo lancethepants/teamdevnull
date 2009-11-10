@@ -34,11 +34,11 @@ CREATE TABLE USERDETAIL
 	UserDetailHomePhone			varchar(20)					NOT NULL				,
 	UserDetailEmail				varchar(30)											,
 	UserDetailMobilePhone		varchar(20)											,
-	UserDetailMobileSMS			char(1)												,
+	UserDetailMobileSMS			bit(1)												,
 	DegreeCategoryID			smallint											,
 	MobileProviderCategoryID	smallint											,
 	CampusCategoryID			smallint											,
-	RefferalCategoryID			smallint
+	ReferralCategoryID			smallint
 );
 
 DROP TABLE if exists DEGREECATEGORY;
@@ -65,12 +65,12 @@ CREATE TABLE CAMPUSCATEGORY
 	CampusCategoryDesc			varchar(30)					NOT NULL
 );
 
-DROP TABLE if exists REFFERALCATEGORY;
+DROP TABLE if exists REFERRALCATEGORY;
 
-CREATE TABLE REFFERALCATEGORY
+CREATE TABLE REFERRALCATEGORY
 (
-	RefferalCategoryID			smallint	AUTO_INCREMENT	NOT NULL	PRIMARY KEY	,
-	RefferalCategoryDesc		varchar(30)					NOT NULL
+	ReferralCategoryID			smallint	AUTO_INCREMENT	NOT NULL	PRIMARY KEY	,
+	ReferralCategoryDesc		varchar(30)					NOT NULL
 );
 
 DROP TABLE if exists TEXTBOOKLIST;
@@ -78,7 +78,7 @@ DROP TABLE if exists TEXTBOOKLIST;
 CREATE TABLE TEXTBOOKLIST
 (
 	TextBookListID				smallint	AUTO_INCREMENT	NOT NULL	PRIMARY KEY	,
-	TextBookListStatus			char(1)						NOT NULL				,
+	TextBookListStatus			bit(1)						NOT NULL				,
 	TextBookListTitle			varchar(20)					NOT NULL				,
 	TextBookListAuthor			varchar(20)					NOT NULL				,
 	TextBookListISBN			varchar(20)					NOT NULL				,
@@ -99,7 +99,7 @@ CREATE TABLE ADVISORAPPOINTMENT
 	AdvisorAppointmentDate3		datetime					NOT NULL				,
 	AdvisorAppointmentDesc		varchar(200)				NOT NULL				,
 	AdvisorAppointmentAdvisor	varchar(50)											,
-	AdvisorAppointmentAccepted	char(1)
+	AdvisorAppointmentAccepted	bit(1)
 );
 
 DROP TABLE if exists HELPFULLINK;
@@ -109,7 +109,7 @@ CREATE TABLE HELPFULLINK
 	HelpfullLinkID				smallint	AUTO_INCREMENT	NOT NULL	PRIMARY KEY	,
 	HelpfullLinkDesc			varchar(100)				NOT NULL				,
 	HelpfullLinkURL				varchar(50)					NOT NULL				,
-	HelpfullLinkLinkActive		char(1)						NOT NULL
+	HelpfullLinkLinkActive		bit(1)						NOT NULL
 );
 
 DROP TABLE if exists TESTIMONIAL;
@@ -117,7 +117,7 @@ DROP TABLE if exists TESTIMONIAL;
 CREATE TABLE TESTIMONIAL
 (
 	TestimonialID				smallint	AUTO_INCREMENT	NOT NULL	PRIMARY KEY	,
-	TestimonialStatus			char(1)						NOT NULL				,
+	TestimonialStatus			bit(1)						NOT NULL				,
 	TestimonialAuthor			varchar(20)					NOT NULL				,
 	TestimonialMessage			varchar(200)
 );
@@ -127,7 +127,7 @@ DROP TABLE if exists JOBPOSTING;
 CREATE TABLE JOBPOSTING
 (
 	JobPostingID				smallint	AUTO_INCREMENT	NOT NULL	PRIMARY KEY	,
-	JobPostingStatus			char(1)						NOT NULL				,
+	JobPostingStatus			bit(1)						NOT NULL				,
 	JobPostingJob				varchar(50)					NOT NULL				,
 	JobPostingURL				varchar(50)					NOT NULL				,
 	JobPostingDesc				varchar(100)
@@ -147,7 +147,7 @@ DROP TABLE if exists ANNOUNCEMENT;
 CREATE TABLE ANNOUNCEMENT
 (
 	AnnouncementID				smallint	AUTO_INCREMENT	NOT NULL	PRIMARY KEY	,
-	AnnouncementStatus			char(1)						NOT NULL				,
+	AnnouncementStatus			bit(1)						NOT NULL				,
 	AnnouncementPriority		smallint					NOT NULL				,
 	AnnouncementExpiresDate		datetime					NOT NULL				,
 	AnnouncementMessage			varchar(200)
