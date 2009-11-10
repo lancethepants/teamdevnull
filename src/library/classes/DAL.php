@@ -1,6 +1,4 @@
 <?php 
-require_once("DALAbstract.php");
-require_once("/home/devnull/teamdevnull-read-only/src/library/const/constants.php");
 /**
  * Data Access Layer class extends DALAbstract.php
  * This class is designed to access mysql db functions
@@ -23,13 +21,13 @@ class DAL extends DALAbstract {
 	}
 	
 	public function __destruct() {
-		mysql_close($this->con);
+		//mysql_close($this->con);
 	}
 	
 	/**
 	 * Execute takes an SQL SELECT statement that should return rows as its parameter
 	 * and will execute the query on the server. It returns the result set as an
-	 * index array of records. This method will return false on error. Check the error
+	 * index array of records. This method will return -1 on error. Check the error
 	 * message with DAL::getErrorMessage()
 	 * 
 	 * @param string $query The query string that will be executed on the database
@@ -47,7 +45,7 @@ class DAL extends DALAbstract {
 				mysql_free_result($this->rs);
 			} else {
 				$this->ErrMsg = mysql_error();
-				return false;
+				return -1;
 			}
 		}
 		
@@ -58,7 +56,7 @@ class DAL extends DALAbstract {
 	 * Update takes an SQL INSERT,UPDATE, or DELETE statement and executes it on the
 	 * server. It will return the number of rows that were affected with the SQL
 	 * statement. This method will return false if for some reason there are database
-	 * errors. If false is returned check the error message with DAL::getErrorMessage();
+	 * errors. If -1 is returned check the error message with DAL::getErrorMessage();
 	 * 
 	 * @param string $update The update query to be executed on the server.
 	 * @return int Rows that were affected with the update
@@ -69,7 +67,7 @@ class DAL extends DALAbstract {
 			$ra = mysql_affected_rows();
 		} else {
 			$this->ErrMsg = mysql_error();
-			return false;
+			return -1;
 		}
 		return $ra;
 	}
