@@ -209,10 +209,12 @@ form
                         <input type="text" name="mphone" /><br />
                         Provider: <Select name="provider">
 		                <?php
-							$conn = mysql_connect('localhost','root','');
-							mysql_select_db('3750-09devnull',$conn);
+							//$conn = mysql_connect('localhost','root','');
+							//mysql_select_db('3750-09devnull',$conn);
+							
 							$sql = "SELECT * FROM mobileprovidercategory";
-							$result = mysql_query($sql,$conn);
+							$result = $db->execute($sql);
+							//$result = mysql_query($sql,$conn);
 							while ($row = mysql_fetch_array($result))
 							{									
 								echo "<option value='".$row['MobileProviderCategoryID']."'>".$row['MobileProviderCategoryDesc']."<br />";
