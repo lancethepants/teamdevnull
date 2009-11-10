@@ -1,11 +1,14 @@
 <?php
 require_once('../../simpletest/autorun.php');
+require_once('../../const/constants.php');
+require_once('../DALAbstract.php');
 require_once('../DAL.php');
 
 /**
  * Unit test for the DAL
  */
 
+		print getcwd();
 
 class DALTest extends UnitTestCase {
 	
@@ -21,7 +24,6 @@ class DALTest extends UnitTestCase {
 		$cnt = count($this->arResult);
 		$this->assertEqual(3, $cnt);
 		
-		print getcwd();
 		foreach ($this->arResult as $key => $array) {
 			foreach ($array as $key2 => $value) {
 				$this->assertEqual($value, $arDestResult[$key][$key2]);
