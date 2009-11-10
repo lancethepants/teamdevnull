@@ -99,6 +99,10 @@ form
 </head>
 <body>
 
+<?php
+	require_once("/home/devnull/teamdevnull-read-only/src/library/classes/DAL.php");
+ ?>
+
 <center>
 
 <div class="content">
