@@ -255,10 +255,11 @@ form
                         <td style="font-style:italic;font-size:14px;">Degree Track:</td>
                         <td style="font-style:italic;font-size:14px;">
                         	<?php
-								$conn = mysql_connect('localhost','root','');
-								mysql_select_db('3750-09devnull',$conn);
+								//$conn = mysql_connect('localhost','root','');
+								//mysql_select_db('3750-09devnull',$conn);
 								$sql = "SELECT * FROM degreecategory";
-								$result = mysql_query($sql,$conn);
+								$result = $db->execute($sql);
+								//$result = mysql_query($sql,$conn);
 								while ($row = mysql_fetch_array($result))
 								{									
 									echo "<input type='radio' name='track' value='".$row['DegreeCategoryID']."' checked='true'>".$row['DegreeCategoryDesc']."<br />";									
@@ -275,10 +276,11 @@ form
         	            <td style="font-style:italic;font-size:14px;">Your Main Campus:</td>
             	        <td style="font-style:italic;font-size:14px;">
 	                        <?php
-								$conn = mysql_connect('localhost','root','');
-								mysql_select_db('3750-09devnull',$conn);
+								//$conn = mysql_connect('localhost','root','');
+								//mysql_select_db('3750-09devnull',$conn);
 								$sql = "SELECT * FROM campuscategory";
-								$result = mysql_query($sql,$conn);
+								$result = $db->execute($sql);
+								//$result = mysql_query($sql,$conn);
 								while ($row = mysql_fetch_array($result))
 								{									
 									echo "<input type='radio' name='campus' value='".$row['CampusCategoryID']."' checked='true'>".$row['CampusCategoryDesc']."<br />";									
@@ -291,10 +293,11 @@ form
         	            <td style="font-style:italic;font-size:14px;">How did you FIRST hear about us:</td>
             	        <td style="font-style:italic;font-size:14px;">
 	                        <?php
-								$conn = mysql_connect('localhost','root','');
-								mysql_select_db('3750-09devnull',$conn);
+								//$conn = mysql_connect('localhost','root','');
+								//mysql_select_db('3750-09devnull',$conn);
 								$sql = "SELECT * FROM refferalcategory";
-								$result = mysql_query($sql,$conn);
+								$result = $db->execute($sql);
+								//$result = mysql_query($sql,$conn);
 								while ($row = mysql_fetch_array($result))
 								{									
 									echo "<input type='radio' name='firstHearAbout' value='".$row['RefferalCategoryID']."' checked='true'>".$row['RefferalCategoryDesc']."<br />";									
