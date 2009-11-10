@@ -2,7 +2,7 @@
 <head>
 
 <style>
-
+/*
 body
 {
 	background: #999;
@@ -83,11 +83,26 @@ body
 	-moz-border-radius: 3px;
 	-webkit-border-radius: 3px;
 }
-
+*/
 </style>
+
+<link href="../library/css/style.css" type="text/css" rel="stylesheet">
 
 </head>
 <body>
+
+<?php
+	
+	/*require_once("/home/devnull/teamdevnull-read-only/src/library/classes/DAL.php"); FOR PROD*/
+	require_once("../includes.php");
+	$db = new DAL();
+	//	$result = $db->execute("SELECT FROM"); FOR SELECTs
+	// $db->update("query"); FOR UPDATEs*/ 
+	
+	
+	
+ ?>
+
 
 <center>
 
@@ -95,7 +110,7 @@ body
 
 	<div class="header">
 	
-		<img src="title.png" class="title_bar" />
+		<img src="../library/images/title.png" class="title_bar" />
 		
 		<div class="login_box">
 		
@@ -123,7 +138,7 @@ body
 					$fname = $_POST['fname'];
 					$lname = $_POST['lname'];
 					$login = $_POST['username'];
-					$pass = $_POST['userpass'];
+					$pass = md5($_POST['userpass']);
 					$cQuestion = $_POST['cQuestion'];
 					$cAnswer = $_POST['cAnswer'];
 					$city = $_POST['city'];
@@ -132,11 +147,11 @@ body
 					$mobile = $_POST['mphone'];
 					if (isset($_POST['sms']))
 					{
-						$sms = 'y';
+						$sms = 1;
 					}
 					else
 					{
-						$sms = 'n';
+						$sms = 0;
 					}
 					$degree = $_POST['track'];
 					$mobileprovider = $_POST['provider'];
@@ -149,13 +164,15 @@ body
 					if ($conn)
 					{
 						$sql = "INSERT INTO user (UserCategoryID, UserLogin, UserPassword, UserChallengeQuestion, UserChallengeQuestionAnswer) VALUES(1, '$login', '$pass', '$cQuestion', '$cAnswer')";
-						$result = mysql_query($sql, $conn);
+						$result = $db->update($sql);
+						//$result = mysql_query($sql, $conn);
 						$userid = mysql_insert_id();
 						if ($result)
 						{
 							
-							$sql = "INSERT INTO userdetail (UserID, UserDetailFirst,UserDetailLast,UserDetailCity,UserDetailHomePhone,UserDetailEmail,UserDetailMobilePhone,UserDetailMobileSMS,DegreeCategoryID,MobileProviderCategoryID,CampusCategoryID,RefferalCategoryID) VALUES ($userid, '$fname', '$lname', '$city', '$phone', '$email', '$mobile', '$sms', $degree, $mobileprovider, $campus, $referral)";
-							$result = mysql_query($sql, $conn);
+							$sql = "INSERT INTO userdetail (UserID, UserDetailFirst,UserDetailLast,UserDetailCity,UserDetailHomePhone,UserDetailEmail,UserDetailMobilePhone,UserDetailMobileSMS,DegreeCategoryID,MobileProviderCategoryID,CampusCategoryID,RefferalCategoryID) VALUES ($userid, '$fname', '$lname', '$city', '$phone', '$email', '$mobile', $sms, $degree, $mobileprovider, $campus, $referral)";
+							$result = $db->update($sql);
+							//$result = mysql_query($sql, $conn);
 							echo 'Data inserted';
 						}
 						else
