@@ -6,6 +6,8 @@ require_once('../DAL.php');
  * Unit test for the DAL
  */
 
+print getcwd();
+
 class DALTest extends UnitTestCase {
 	
 	public $srcDAL;
